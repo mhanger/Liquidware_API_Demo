@@ -41,7 +41,6 @@ export class UserDetailComponent implements OnInit {
     "sort_order":"2"
   };
 
-
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -86,14 +85,6 @@ export class UserDetailComponent implements OnInit {
       case "1d":
           dateAdj = 1;
           this.params.date = "yesterday"
-          break;
-      case "7d":
-          dateAdj = 7;
-          this.params.date = "7 days"
-          break;
-      case "30d":
-          dateAdj = 30
-          this.params.date = "30 days"
           break;
       default:
           dateAdj = 1;
@@ -144,10 +135,7 @@ export class UserDetailComponent implements OnInit {
       "categoryAxis": {
         "gridPosition": "start",
         "fontSize": "12"
-      },
-      "export": {
-        "enabled": true
-      },
+      }
     }
   }
 

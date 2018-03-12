@@ -81,14 +81,6 @@ export class UsersComponent implements OnInit {
           dateAdj = 1;
           this.params.date = "yesterday"
           break;
-      case "7d":
-          dateAdj = 7;
-          this.params.date = "7 days"
-          break;
-      case "30d":
-          dateAdj = 30
-          this.params.date = "30 days"
-          break;
       default:
           dateAdj = 1;
           this.params.date = "yesterday"
@@ -173,10 +165,7 @@ export class UsersComponent implements OnInit {
       "categoryAxis": {
         "gridPosition": "start",
         "labelRotation": 45
-      },
-      "export": {
-        "enabled": true
-      },
+      }
     }
   }
 

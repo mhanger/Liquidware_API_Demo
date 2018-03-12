@@ -3,7 +3,7 @@
           <button type="button" class="btn btn-primary" (click)="resetToAll($event)">Return to All Users</button>
       </form>
       <h3>
-         Workload Report for {{reportDate}}  <span>
+         <a (click)="resetToAll($event)">Workload Report for {{reportDate}} </a>  <span>
               &gt; {{rows[0].user_name}}
           </span>
       </h3>
