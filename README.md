@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run npm install
  
-Then nom start
+Then npm start
 
 ## Development server
 
