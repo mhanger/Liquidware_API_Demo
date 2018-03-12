@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+@import  url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
+
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+body {
+    font-family: Lato, sans-serif;
+    padding-top: 20px;
+}
+
+h3 {
+ margin-bottom: 0;
+ color: #636466;
+}
+
+.cbar {
+  color: #eee;
+  background: #397ccb;
+  padding: 10px 0;
+  margin: 1.2em -15px 1.5em -15px;
+  label {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-right: 10px;
+    margin-left: 32px;
+  }
+  .btn {
+    background: #d7d7d7;
+    color: #000;
+    text-transform: uppercase;
+    border-radius: 24px;
+    font-size: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin-left: 10px;
+    &:hover {
+      background: #ddd;
+    }
+  }
+  .select {
+    position: relative;
+    display: inline-block;
+    min-width: 150px;
+     select {
+        display: inline-block;
+        width: 100%;
+        cursor: pointer;
+        padding: 5px 0 5px 5px;
+        outline: 0;
+        border: 1px solid #636466;
+        border-radius: 0px;
+        background: #ffffff;
+        color: #636466;
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+    }
+    select::-ms-expand {
+        display: none;
+    }
+    select:hover,
+    select:focus {
+        color: #000000;
+    }
+    select:disabled {
+        opacity: 0.5;
+        pointer-events: none;
+    }
+    .select_arrow {
+        position: absolute;
+        top: 12px;
+        right: 15px;
+        width: 0;
+        height: 0;
+        border: solid #7B7B7B;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
+    select:hover ~ .select_arrow,
+    select:focus ~ .select_arrow {
+        border-top-color: #000000;
+    }
+    select:disabled ~ .select_arrow {
+        border-top-color: #CCCCCC;
+    }
+  }
+}
+
+.jumbotron {
+ .lead {
+   margin-top: 1.8em;
+ }
+}
+
+form {
+  .btn {
+    text-transform: uppercase;
+    border-radius: 24px;
+    font-size: 14px;
+    padding-left: 25px;
+    padding-right: 25px;
+    background-color:#2a68af;
+    &:hover {
+      background: #397ccb;
+    }
+  }
+}
+.ngx-datatable {
+  margin-bottom: 3em;
+  .datatable-body-row.active,
+  .datatable-body-row.active .datatable-row-group,
+  .datatable-body-row.active,
+  .datatable-body-row.active .datatable-row-group {
+    background-color:  #397ccb !important;
+  }
+
+  .datatable-body-row:hover,
+  .datatable-body-row:hover .datatable-row-group,
+  .datatable-body-row:hover,
+  .datatable-body-row:hover .datatable-row-group {
+    background-color: #8eb9da !important;
+  }
+
+}
+.datatable-header-cell-label {
+    font-size: 14px;
+    color: #2a68af;
+    font-weight: bold;
+}
+#chartdiv {
+    margin-top: 1.5em;
+    min-height: 350px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .checkbox-margin {
+    margin: 0 10px;
+  }
+
+  [hidden] {
+    display: none;
+  }
+
+  #chartcontainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    margin-bottom: 1em;
+  }
+
+ #curtain, #curtainContent {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    color: #fff;
+    font-size: 25px;
+  }
+
+  #curtain {
+    background: rgba(0, 0, 0, 0.8);
+    opacity: .3;
+  }
+  #curtainContent span {
+    display: block;
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+  }
+
+  @media screen and (max-width: 600px) {
+    .cbar {
+      .form-group {
+        width: 100%;
+      }
+      button.btn {
+        margin-top: 10px;
+        margin-left: 32px;
+
+      }
+    }
+  }

@@ -1,0 +1,50 @@
+<div *ngIf="dataLoaded">
+    <h3>
+       Workload Report for {{reportDate}}  <span *ngFor='let sel of selected'>
+            > {{sel.user_name}}
+        </span>
+    </h3>
+</div>
+
+<div *ngIf="!dataLoaded && submittedSearch">
+        <div class="container">
+           <div class="row">
+              <div class="col-md-12 text-center">
+                <img src="/assets/ajax-loader.gif" alt="Loading"><br>
+                Please wait
+              </div>
+           </div>
+        </div>
+      </div>
+
+<div id="chartcontainer">
+    <div id="chartdiv"></div>
+    <div id="curtain" *ngIf="chartLoading && submittedSearch"></div>
+    <div id="curtainContent" *ngIf="chartLoading && submittedSearch"><span><img src="/assets/ajax-loader-fff.gif" alt="Chart Reloading"><br>Please wait</span></div>
+  </div>
+
+  <div *ngIf="dataLoaded">
+      <ngx-datatable
+          #myTable
+          class='material ngx-datatable striped'
+          [rows]='rows'
+          [columnMode]="'force'"
+          [headerHeight]="50"
+          [footerHeight]="50"
+          [rowHeight]="'auto'"
+          [scrollbarV]="false"
+          [selectionType]="'single'"
+          (select)='onSelect($event)'
+          [selected]="selected"
+         >
+         <ngx-datatable-column name="Name" prop="user_name"></ngx-datatable-column>
+         <ngx-datatable-column name="Workload" prop="rank_score"></ngx-datatable-column>
+         <ngx-datatable-column name="CPU Used" prop="cpu_used_mhz"></ngx-datatable-column>
+         <ngx-datatable-column name="RAM Used"  prop="memory_used_mb"></ngx-datatable-column>
+         <ngx-datatable-column name="Page File Used" prop="page_used_mb"></ngx-datatable-column>
+         <ngx-datatable-column name="Total IO" prop="total_io_bps"></ngx-datatable-column>
+         <ngx-datatable-column name="Total IOPS" prop="total_iops"></ngx-datatable-column>
+      </ngx-datatable>
+
+</div>
+

@@ -1,0 +1,18 @@
+<div class="cbar">
+  <form class="form-inline">
+      <div class="form-group">
+        <label for="timeFrame" class="">Time Frame:</label>
+        <div class="select">
+            <select id="timeFrame" #timeFrame>
+                <option value="1">Yesterday</option>
+                <option value="7">A Week Ago</option>
+                <option value="30">30 Days Ago</option>
+            </select>
+            <div class="select_arrow">
+            </div>
+        </div>
+      </div>
+      <button (click)="onSearchTime(timeFrame)" class="btn btn-primary ">Search</button>
+  </form>
+</div>
+
