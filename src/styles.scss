@@ -10,7 +10,8 @@ body {
     padding-top: 20px;
 }
 
-h3 {
+
+app-users h3, app-users-detail h3 {
  margin-bottom: 0;
  margin-left: 18px;
  color: #636466;
@@ -96,8 +97,15 @@ h3 {
 }
 
 .jumbotron {
+  color: #fff;
+  background-image: url("/assets/techbg.jpg");
+  background-size: cover;
  .lead {
-   margin-top: 1.8em;
+   margin-top: 1em;
+ }
+ h3 {
+  color: #fff;
+  text-shadow: #000 2px 2px;
  }
 }
 
