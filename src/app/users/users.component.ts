@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { map, filter } from 'rxjs/operators';
 import { FormControl } from '@angular/forms';
 import { AmChartsService, AmChart } from '@amcharts/amcharts3-angular';
-import { ActivatedRoute, Router, Params } from '@angular/router';
+import { ActivatedRoute, Router, Params} from '@angular/router';
 
 import * as _ from 'underscore';
 
@@ -15,12 +15,10 @@ import * as _ from 'underscore';
 })
 
 export class UsersComponent implements OnInit {
-
   @ViewChild('myTable') table: any;
 
-  public firstLoad:boolean = false;
   public url:string = 'https://demo.liquidware.com/lwl/api?json=';
-  public dataLoaded = false;
+  public dataLoaded:boolean = false;
   public chartLoading: boolean = false;
   public selected:any[] = [];
   public searchType:number = 0;
@@ -47,13 +45,15 @@ export class UsersComponent implements OnInit {
     private route: ActivatedRoute,
   	public dataService1: DataService,
     public AmCharts: AmChartsService,
-	) {this.dataService = dataService1}
+  ) {this.dataService = dataService1;
+
+    }
 
   ngOnInit() {
     this.route.params
     .subscribe(
       (params: Params) => {
-        this.timeFrameURL= params['timeFrame'];
+        this.timeFrameURL = params['timeFrame'];
       });
       this.onTimeSearched(this.timeFrameURL);
   }
@@ -65,7 +65,6 @@ export class UsersComponent implements OnInit {
   // Time frame functions, calling correct 'X days', but data seems the same :-(
 
   onTimeSearched(timeFrame) {
-    this.firstLoad = true;
     this.reportDate = this.getSearchDate(timeFrame);
     this.destroyChart();
     this.destroyData();
