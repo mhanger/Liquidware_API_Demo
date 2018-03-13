@@ -14,6 +14,7 @@ import { BarComponent } from './bar/bar.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { UsersComponent } from './users/users.component';
 import { WelcomeComponent } from './welcome/welcome.component';
+import { CustomReuseStrategy } from './custom-reuse-strategy';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
     FormsModule,
     AmChartsModule
   ],
-  providers: [DataService],
+  providers: [{ provide: RouteReuseStrategy, useClass: CustomReuseStrategy }, DataService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() { }
+}

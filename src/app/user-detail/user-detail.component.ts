@@ -16,7 +16,6 @@ export class UserDetailComponent implements OnInit {
 
   @ViewChild('myTable') table: any;
 
-  public firstLoad:boolean = false;
   public url:string = 'https://demo.liquidware.com/lwl/api?json=';
   public dataLoaded = false;
   public chartLoading: boolean = false;

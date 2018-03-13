@@ -9,10 +9,10 @@ import { WelcomeComponent } from './welcome/welcome.component';
 
 const appRoutes: Routes = [
   {path: '',redirectTo: 'workload', pathMatch: 'full'},
-  { path: 'workload', component: HomeComponent, children: [
+  { path: 'workload', component: HomeComponent,  data: {key: 'keyPages'}, children: [
     {path: '', component: WelcomeComponent},
-    {path: ':timeFrame/users', component: UsersComponent},
-    {path: ':timeFrame/users/:user_id', component: UserDetailComponent }
+    {path: ':timeFrame/users', component: UsersComponent, data:{key: 'keyA'}},
+    {path: ':timeFrame/users/:user_id', component: UserDetailComponent}
   ]
 },
   {path: 'not-found', component: PageNotFoundComponent },
