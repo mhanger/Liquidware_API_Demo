@@ -1,16 +1,18 @@
 <div class="cbar">
-  <form class="form-inline">
+  <form class="form-inline" [ngFormOptions]="{ updateOn: 'submit' }" (ngSubmit)="onSearchTime(tForm)" #tForm="ngForm">
       <div class="form-group">
-        <label for="timeFrame" class="">Time Frame:</label>
+        <label for="timeFrame">Time Frame:</label>
         <div class="select">
-            <select id="timeFrame" #timeFrame>
+            <select id="timeFrame" [ngModel]="1" name="timeFrame" >
                 <option value="1">Yesterday</option>
+                <option value="7">7 Days Ago</option>
+                <option value="30">30 Days Ago</option>
             </select>
             <div class="select_arrow">
             </div>
         </div>
       </div>
-      <button (click)="onSearchTime(timeFrame)" class="btn btn-primary ">Search</button>
+      <button type="submit" class="btn btn-primary ">Search</button>
   </form>
 </div>
 

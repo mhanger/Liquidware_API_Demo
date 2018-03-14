@@ -55,8 +55,8 @@ export class UserDetailComponent implements OnInit {
       (params: Params) => {
         this.userId= params['user_id'];
         this.timeFrame= params['timeFrame'];
+        this.onTimeSearched(this.timeFrame);
       });
-    this.onTimeSearched(this.timeFrame);
   }
 
   ngOnDestroy() {
