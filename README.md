@@ -3,8 +3,14 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.7.
 
 Run npm install
- 
-Then npm start
+
+Then
+
+npm run start:proxy:mock:server
+
+If you need to update individual .json files in /data folder, run
+
+npm run concat:json
 
 Thanks to https://github.com/thebaron24/liquidware for ideas and code for AmCharts.
 

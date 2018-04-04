@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-bar',
@@ -13,9 +14,10 @@ export class BarComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSearchTime(nameInput) {
+  onSearchTime(form: NgForm) {
     this.firstUse = false;
-    this.router.navigate(['workload',nameInput.value+'d','users']);
+    let timeSelected = form.value.timeFrame + 'd';
+    this.router.navigate(['workload', timeSelected,'users']);
   }
 
 }

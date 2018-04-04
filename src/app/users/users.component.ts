@@ -17,7 +17,7 @@ import * as _ from 'underscore';
 export class UsersComponent implements OnInit {
   @ViewChild('myTable') table: any;
 
-  public url:string = 'https://demo.liquidware.com/lwl/api?json=';
+  public url:string = 'http://localhost:3000/users?json=';
   public dataLoaded:boolean = false;
   public chartLoading: boolean = false;
   public selected:any[] = [];
@@ -54,10 +54,13 @@ export class UsersComponent implements OnInit {
     .subscribe(
       (params: Params) => {
         this.timeFrameURL = params['timeFrame'];
+        this.onTimeSearched(this.timeFrameURL);
       });
-      this.onTimeSearched(this.timeFrameURL);
   }
 
+  ngOnChange() {
+
+  }
   ngOnDestroy() {
     this.destroyChart();
   }
@@ -80,7 +83,15 @@ export class UsersComponent implements OnInit {
           dateAdj = 1;
           this.params.date = "yesterday"
           break;
-      default:
+          case "7d":
+          dateAdj = 7;
+          this.params.date = "7 days"
+          break;
+          case "30d":
+          dateAdj = 7;
+          this.params.date = "30 days"
+          break;
+          default:
           dateAdj = 1;
           this.params.date = "yesterday"
     }
