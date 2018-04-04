@@ -17,7 +17,7 @@ import * as _ from 'underscore';
 export class UsersComponent implements OnInit {
   @ViewChild('myTable') table: any;
 
-  public url:string = 'https://demo.liquidware.com/lwl/api?json=';
+  public url:string = 'http://localhost:3000/users?json=';
   public dataLoaded:boolean = false;
   public chartLoading: boolean = false;
   public selected:any[] = [];

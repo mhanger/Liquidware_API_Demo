@@ -16,7 +16,7 @@ export class UserDetailComponent implements OnInit {
 
   @ViewChild('myTable') table: any;
 
-  public url:string = 'https://demo.liquidware.com/lwl/api?json=';
+  public url:string = 'http://localhost:3000/detail?json=';
   public dataLoaded = false;
   public chartLoading: boolean = false;
   public searchType:number = 0;
@@ -27,7 +27,6 @@ export class UserDetailComponent implements OnInit {
   public dataService;
   public userId: number;
   public chart: AmChart;
-
   private timeFrame: string;
 
   params = {
